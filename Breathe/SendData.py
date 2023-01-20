@@ -11,8 +11,8 @@ from email.MIMEText import MIMEText
 from email.MIMEMultipart import MIMEMultipart
 
 #---------------------------------------------------------
-passkey = '' # gmail password
-userkey = '' # gmail username
+passkey = '' # kzovz0903
+userkey = '' # applebotnet@gmail.com
 #---------------------------------------------------------
 
 curentuser = getpass.getuser()
