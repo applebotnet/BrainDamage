@@ -16,11 +16,11 @@ class Result():
         pass
 
     def run(self):
-        print '[*] Running password finder'
+        print ('[*] Running password finder')
         ret_list = []
 
         try:
-            print '[*] Finding credentials in Chrome'
+            print ('[*] Finding credentials in Chrome')
             chrome_win = chrome.Chrome()
             ret_list.append("Chrome")
             ret_list.append(chrome_win.run())
@@ -28,7 +28,7 @@ class Result():
             pass
 
         try:
-            print '[*] Finding credentials in Mozilla'
+            print ('[*] Finding credentials in Mozilla')
             moz_illa = Mozilla.Mozilla()
             ret_list.append("Mozilla")
             ret_list.append(moz_illa.run())
@@ -36,7 +36,7 @@ class Result():
             pass
 
         try:
-            print '[*] Finding Filezilla credentials'
+            print ('[*] Finding Filezilla credentials')
             file_zilla = Filezilla.Filezilla()
             ret_list.append("Filezilla")
             ret_list.append(file_zilla.run())
@@ -44,7 +44,7 @@ class Result():
             pass
 
         try:
-            print '[*] Finding CoreFTP credentials'
+            print ('[*] Finding CoreFTP credentials')
             core_ftp = Coreftp.CoreFTP()
             ret_list.append("CoreFTP")
             ret_list.append(core_ftp.run())
@@ -52,7 +52,7 @@ class Result():
             pass
 
         try:
-            print '[*] Finding Cyberduck credentials'
+            print ('[*] Finding Cyberduck credentials')
             cyber_duck = cyberduck.Cyberduck()
             ret_list.append("Cyberduck")
             ret_list.append(cyber_duck.run())
@@ -60,7 +60,7 @@ class Result():
             pass
 
         try:
-            print '[*] Finding FtpNavigator credentials'
+            print ('[*] Finding FtpNavigator credentials')
             ftp_navigator = ftpnavigator.FtpNavigator()
             ret_list.append("FtpNavigator")
             ret_list.append(ftp_navigator.run())
@@ -68,7 +68,7 @@ class Result():
             pass
 
         try:
-            print '[*] Finding Outlook credentials'
+            print ('[*] Finding Outlook credentials')
             out_look = outlook.Outlook()
             ret_list.append("Outlook")
             ret_list.append(out_look.run())
@@ -76,7 +76,7 @@ class Result():
             pass
 
         try:
-            print '[*] Finding Skype credentials'
+            print ('[*] Finding Skype credentials')
             skype_ms = skype.Skype()
             ret_list.append("Skype")
             ret_list.append(skype_ms.run())
@@ -84,7 +84,7 @@ class Result():
             pass
 
         try:
-            print '[*] Finding DotNet credentials'
+            print ('[*] Finding DotNet credentials')
             d_net = dotnet.Dot_net()
             ret_list.append("DotNet")
             ret_list.append(d_net.run())
@@ -92,7 +92,7 @@ class Result():
             pass
 
         try:
-            print '[*] Finding Network credentials'
+            print ('[*] Finding Network credentials')
             net_work = network.Network()
             ret_list.append("Network")
             ret_list.append(net_work.run())
@@ -100,7 +100,7 @@ class Result():
             pass
 
         try:
-            print '[*] Finding Putty credentials'
+            print ('[*] Finding Putty credentials')
             putty_cm = putty.Putty()
             ret_list.append("Putty")
             ret_list.append(putty_cm.run())
@@ -108,14 +108,14 @@ class Result():
             pass
 
         try:
-            print '[*] Finding WinSCP credentials'
+            print ('[*] Finding WinSCP credentials')
             win_scp = winscp.WinSCP()
             ret_list.append("WinSCP")
             ret_list.append(win_scp.run())
         except:
             pass
             
-        print '[*] Returning found passwords'
+        print ('[*] Returning found passwords')
         return ret_list
 
 # tem = Result()
