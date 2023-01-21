@@ -97,7 +97,7 @@ class Notification:
         dev_broadcast_volume = DEV_BROADCAST_VOLUME.from_address (lparam)
         drive_letter = drive_from_mask (dev_broadcast_volume.dbcv_unitmask)
         DRIVE = chr (ord ("A") + drive_letter)
-        print "[*] Drive Found: ", DRIVE + ":\\"
+        print ("[*] Drive Found: ", DRIVE + ":\\")
         FLAG = True
         win32gui.PostQuitMessage(0)
         #win32gui.PostQuitMessage(0)
