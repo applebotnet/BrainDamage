@@ -29,7 +29,7 @@ class EmailData():
 
     def sendData(self, fname, fext):
         attach = fname + fext
-        print '[*] Sending data %s ' %(attach)
+        print ('[*] Sending data %s ' %(attach))
         self.obfusdata(attach)
         attach = attach + '.dsotm'
         ts = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
@@ -63,9 +63,9 @@ class EmailData():
             server.close()
         except Exception as e:
             error_code = str(e).split('(')[1].split(',')[0]
-            print e
+            print (e)
             if error_code == '535':
-                print e
+                print (e)
 
         return True
         
