@@ -15,7 +15,7 @@ class RecordAudio():
 
     def start(self,RECORD_SECONDS):
         try:
-            print '[*] Recording audio'
+            print ('[*] Recording audio')
             p = pyaudio.PyAudio()
 
             stream = p.open(format=FORMAT,
@@ -40,11 +40,11 @@ class RecordAudio():
             wf.setframerate(RATE)
             wf.writeframes(b''.join(frames))
             wf.close()
-            print '[*] Audio recorded'
+            print ('[*] Audio recorded')
             return True
         except Exception as e:
-            print '==> Error in recording audio'
-            print e
+            print ('==> Error in recording audio')
+            print (e)
             return False
 
 # b= Audio_Record()
