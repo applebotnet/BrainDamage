@@ -13,7 +13,7 @@ class ChangeWallpaper():
         pass
 
     def downloadWallpaper(self, url):
-        print '[*] Inside change wallpaper'
+        print ('[*] Inside change wallpaper')
         image_name = CACHE_PATH + url.rsplit('/', 1)[1]
         try:
             f = open(image_name, 'wb')
@@ -21,17 +21,17 @@ class ChangeWallpaper():
             f.close()
             time.sleep(5)
             self.background(image_name)
-            print '[*] Wallpaper changed'
+            print ('[*] Wallpaper changed')
         except Exception as e:
-            print '==> Error in changing wallpaper'
-            print e
+            print ('==> Error in changing wallpaper')
+            print (e)
 
     def background(self, path):
         try:
             time.sleep(1)
             ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, str(path), 0)
         except Exception as e:
-            print e
+            print (e)
             
 # wallpaper = changewallpaper.ChangeWallpaper()
 # wallpaper.downloadWallpaper(img_url)
