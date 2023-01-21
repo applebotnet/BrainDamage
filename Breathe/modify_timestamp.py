@@ -10,7 +10,7 @@ except:
 
 
 def changeTimestamp(path,fileName,daylimit):
-    print '[*] Inside changeTimestamp'
+    print ('[*] Inside changeTimestamp')
     dates = {}
     fileName = os.path.join(path, fileName)
     dates['tdata'] = getDate(fileName,daylimit)
@@ -22,7 +22,7 @@ def changeTimestamp(path,fileName,daylimit):
         filehandle = win32file.CreateFile(fileName, win32file.GENERIC_WRITE, 0, None, win32con.OPEN_EXISTING, 0, None)
         win32file.SetFileTime(filehandle, dates['tdata'],dates['tdata'],dates['tdata'])
         filehandle.close()
-        print "[*] Timestamps changed!!"
+        print ("[*] Timestamps changed!!")
     else:
         os.utime(fileName, (time.mktime(dates['tdata'].utctimetuple()),)*2)
     
