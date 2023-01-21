@@ -56,4 +56,4 @@ def makeRList():
             file.write(rl)
             file.close()
     except Exception as e:
-        print e
+        print (e)
