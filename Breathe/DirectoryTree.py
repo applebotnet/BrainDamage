@@ -11,15 +11,15 @@ class Directory():
 
         
     def get_list_drives(self):
-        print '[*] Getting list of available drives'
+        print ('[*] Getting list of available drives')
         drives = win32api.GetLogicalDriveStrings()
         drives = drives.split('\000')[:-1]
-        print '[*] Returning list of drives'
+        print ('[*] Returning list of drives')
         return drives
 
         
     def DriveTree(self):
-        print '[*] Making directory tree'
+        print ('[*] Making directory tree')
         drives = self.get_list_drives()
         file_name = USERDATA_PATH + 'DirectoryTree.txt'
         no_of_drives = len(drives)
@@ -64,12 +64,12 @@ class Directory():
 
                     except Exception as e:
                         # print '==> Error in making directory tree'
-                        print e
+                        print (e)
             except Exception as e:
                 pass
 
         file_dir_O.close()
-        print '[*] Directory tree generated succesfully'
+        print ('[*] Directory tree generated succesfully')
         return True
  
  
