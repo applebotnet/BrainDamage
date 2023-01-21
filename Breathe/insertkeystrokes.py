@@ -133,7 +133,7 @@ def ReleaseKey(hexKeyCode):
     user32.SendInput(1, ctypes.byref(x), ctypes.sizeof(x))
 
 def AltTab():
-    print '[*] Inserting Keystrokes'
+    print ('[*] Inserting Keystrokes')
     PressKey(dict_keystrokes['ALT'])
     PressKey(dict_keystrokes['\t'])
     time.sleep(0.01)
@@ -142,7 +142,7 @@ def AltTab():
     time.sleep(0.01)
     
 def cursorStart():
-    print '[*] Inserting Keystrokes'
+    print ('[*] Inserting Keystrokes')
     PressKey(dict_keystrokes['CTRL'])
     PressKey(dict_keystrokes['HOME'])
     time.sleep(0.01)
@@ -151,7 +151,7 @@ def cursorStart():
     time.sleep(0.01)
     
 def cursorEnd():
-    print '[*] Inserting Keystrokes'
+    print ('[*] Inserting Keystrokes')
     PressKey(dict_keystrokes['CTRL'])
     PressKey(dict_keystrokes['END'])
     time.sleep(0.01)
@@ -160,7 +160,7 @@ def cursorEnd():
     time.sleep(0.01)
 
 def SendKeystrokes(keystrokes):
-    print '[*] Inserting Keystrokes'
+    print ('[*] Inserting Keystrokes')
     keystrokes = list(keystrokes)
     for letter in keystrokes:
         try:
