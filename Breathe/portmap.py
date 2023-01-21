@@ -27,7 +27,7 @@ class PortMap():
             try:
                 sock_conn.settimeout(0.5)
                 sock_conn.connect((host,port))
-                print "[*] Connection Succesful! Port: %s " % port
+                print ("[*] Connection Succesful! Port: %s ") % port
                 open_ports.append(port)
             except Exception as e:
                 pass
@@ -42,7 +42,7 @@ class PortMap():
                 pass
             
     def run(self, host, threads, no_ports):
-        print '[*] Mapping ports'
+        print ('[*] Mapping ports')
         if threads == None:
             threads = 50
         if no_ports == None:
@@ -53,6 +53,6 @@ class PortMap():
         self.run_threads(threads, host, no_ports)
         while Flag:
             pass
-        print '[*] Returning ports'
+        print ('[*] Returning ports')
         return open_ports
         
