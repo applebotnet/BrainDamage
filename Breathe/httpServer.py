@@ -14,16 +14,16 @@ class SimpleServer():
         
     def runServer(self, path, port):
         global SERVER_SHUTDOWN
-        print '[*] Starting HTTP server'
+        print ('[*] Starting HTTP server')
         
         os.chdir(path)
         Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
         httpd = SocketServer.TCPServer(("", port), Handler)
-        print "[*] Serving at port: ", port
+        print ("[*] Serving at port: ", port)
         httpd.serve_forever()
         
     def stopServer(self):
-        print "[*] Shutting down server..."
+        print ("[*] Shutting down server...")
         self.httpd.shutdown()
 
 # server = SimpleServer()
