@@ -1,7 +1,7 @@
 import ctypes
  
 def revealWindows():
-    print '[*] Getting window titles'
+    print ('[*] Getting window titles')
     EnumWindows = ctypes.windll.user32.EnumWindows
     EnumWindowsProc = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.POINTER(ctypes.c_int), ctypes.POINTER(ctypes.c_int))
     GetWindowText = ctypes.windll.user32.GetWindowTextW
