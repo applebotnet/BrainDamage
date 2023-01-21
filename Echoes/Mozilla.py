@@ -343,7 +343,7 @@ class Mozilla():
                             return p.strip()
 
             except (KeyboardInterrupt, SystemExit):
-                print 'INTERRUPTED!'
+                print ('INTERRUPTED!')
             except Exception, e:
                 pass
 
@@ -359,7 +359,7 @@ class Mozilla():
                             w = ''.join(word)
                             return w.strip()
             except (KeyboardInterrupt, SystemExit):
-                print 'INTERRUPTED!'
+                print ('INTERRUPTED!')
             except Exception, e:
                 pass
         return False
