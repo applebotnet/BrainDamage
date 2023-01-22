@@ -1,5 +1,5 @@
 import os
-from _winreg import *
+from winreg import *
 
 HCU_RUN = r"Software\Microsoft\Windows\CurrentVersion\Run"
 HLM_WL = r"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon"
