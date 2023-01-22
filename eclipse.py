@@ -4,9 +4,9 @@ import time
 import errno
 import shutil
 import ctypes
-import pyHook
+import pyWinhook
 import urllib
-import urllib2
+from urllib.request import urlopen
 import telepot
 import getpass
 import logging
